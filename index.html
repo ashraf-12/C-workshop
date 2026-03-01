@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FORCE DESKTOP VIEW -->
+<meta name="viewport" content="width=1200">
+
 <title>C# & .NET Workshop | YSU</title>
 
 <style>
@@ -20,7 +23,7 @@ body{
     justify-content:center;
     align-items:center;
     position:relative;
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
 /* ========================= */
@@ -70,8 +73,7 @@ body{
 /* ========================= */
 
 .container{
-    width:1100px;
-    max-width:95%;
+    width:1100px; /* FIXED DESKTOP WIDTH */
     border-radius:18px;
     padding:4px;
     background: linear-gradient(270deg,#ce1126,#ffffff,#000000);
@@ -127,7 +129,7 @@ body{
 /* RIGHT SIDE */
 .right{
     width:55%;
-    padding:50px;
+    padding:60px 50px;
 }
 
 .right h1{
@@ -193,72 +195,6 @@ button:hover{
     height:95%;
     opacity:0.15;
     z-index:-1;
-}
-
-/* ========================= */
-/* MOBILE RESPONSIVE */
-/* ========================= */
-
-@media(max-width:900px){
-
-    .inner{
-        flex-direction:column;
-    }
-
-    .left, .right{
-        width:100%;
-        border-right:none;
-    }
-
-    .left{
-        border-bottom:3px solid #ce1126;
-    }
-
-    .right{
-        padding:30px 20px;
-    }
-
-    .right h1{
-        font-size:22px;
-    }
-
-    .line{
-        width:350px;
-        height:25px;
-        margin:50px 0;
-    }
-
-    .flag-lines{
-        left:-200px;
-    }
-
-    .background-photo{
-        height:60%;
-        right:-120px;
-        opacity:0.1;
-    }
-}
-
-@media(max-width:500px){
-
-    .right h1{
-        font-size:20px;
-    }
-
-    input,select{
-        font-size:14px;
-        padding:12px;
-    }
-
-    button{
-        font-size:15px;
-        padding:13px;
-    }
-
-    .line{
-        width:250px;
-        height:20px;
-    }
 }
 </style>
 </head>
