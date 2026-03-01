@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C# & .NET Workshop | YSU</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* MASSIVE Yemen Slash Lines */
+/* ========================= */
+
+.flag-lines{
+    position:absolute;
+    left:-150px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:-1;
+}
+
+.line{
+    width:600px;
+    height:40px;
+    margin:90px 0;
+    opacity:0.35;
+    background-size:200% 200%;
+    animation: colorFlow 4s linear infinite;
+    border-radius:20px;
+}
+
+.red{
+    background:linear-gradient(90deg,#ce1126,#ff4d4d,#ce1126);
+    transform:rotate(45deg);
+}
+
+.white{
+    background:linear-gradient(90deg,#ffffff,#e6e6e6,#ffffff);
+    transform:rotate(-45deg);
+}
+
+.black{
+    background:linear-gradient(90deg,#000000,#555,#000000);
+    transform:rotate(45deg);
+}
+
+@keyframes colorFlow{
+    0%{background-position:0% 50%;}
+    100%{background-position:200% 50%;}
+}
+
+/* ========================= */
+/* Animated Border Container */
+/* ========================= */
+
+.container{
+    width:1100px;
+    max-width:95%;
+    border-radius:18px;
+    padding:4px;
+    background: linear-gradient(270deg,#ce1126,#ffffff,#000000);
+    background-size:600% 600%;
+    animation: flagMove 8s ease infinite, floatCard 6s ease-in-out infinite;
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.inner{
+    background:white;
+    border-radius:15px;
+    display:flex;
+    overflow:hidden;
+}
+
+@keyframes flagMove {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes floatCard {
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0px);}
+}
+
+/* LEFT SIDE */
+.left{
+    width:45%;
+    padding:40px 30px;
+    border-right:3px solid #ce1126;
+    text-align:center;
+}
+
+.left img.logo{
+    width:100px;
+    margin-bottom:15px;
+}
+
+.left h2{
+    color:#ce1126;
+    margin-bottom:15px;
+}
+
+.left .description{
+    text-align:left;
+    font-size:14px;
+    color:#444;
+    line-height:1.6;
+}
+
+/* RIGHT SIDE */
+.right{
+    width:55%;
+    padding:50px;
+}
+
+.right h1{
+    color:#ce1126;
+    margin-bottom:25px;
+    position:relative;
+    font-size:28px;
+}
+
+.right h1::after{
+    content:"";
+    width:60px;
+    height:4px;
+    background:black;
+    position:absolute;
+    left:0;
+    bottom:-8px;
+}
+
+/* FORM */
+.form-group{
+    margin-bottom:18px;
+}
+
+input,select{
+    width:100%;
+    padding:14px;
+    border-radius:8px;
+    border:2px solid gold;
+    font-size:15px;
+    background:#fafafa;
+    transition:0.3s;
+}
+
+input:focus,select:focus{
+    border-color:#ce1126;
+    outline:none;
+    box-shadow:0 0 8px rgba(206,17,38,0.3);
+    background:white;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#ce1126;
+    color:white;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:black;
+}
+
+/* Background Photo */
+.background-photo{
+    position:absolute;
+    right:-100px;
+    bottom:0;
+    height:95%;
+    opacity:0.15;
+    z-index:-1;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .inner{
+        flex-direction:column;
+    }
+
+    .left, .right{
+        width:100%;
+        border-right:none;
+    }
+
+    .left{
+        border-bottom:3px solid #ce1126;
+    }
+
+    .right{
+        padding:30px 20px;
+    }
+
+    .right h1{
+        font-size:22px;
+    }
+
+    .line{
+        width:350px;
+        height:25px;
+        margin:50px 0;
+    }
+
+    .flag-lines{
+        left:-200px;
+    }
+
+    .background-photo{
+        height:60%;
+        right:-120px;
+        opacity:0.1;
+    }
+}
+
+@media(max-width:500px){
+
+    .right h1{
+        font-size:20px;
+    }
+
+    input,select{
+        font-size:14px;
+        padding:12px;
+    }
+
+    button{
+        font-size:15px;
+        padding:13px;
+    }
+
+    .line{
+        width:250px;
+        height:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="flag-lines">
+    <div class="line red"></div>
+    <div class="line white"></div>
+    <div class="line black"></div>
+</div>
+
+<img src="myphoto.JPG" class="background-photo" alt="Representative">
+
+<div class="container">
+    <div class="inner">
+
+        <div class="left">
+            <img src="YSU.jpeg" class="logo" alt="YSU Logo">
+            <h2>Yemeni Student Union</h2>
+
+            <div class="description">
+                <p>Understand the fundamentals of C# and .NET Framework for desktop application development.</p>
+                <p>Learn how to use Visual Studio tools and build user interfaces using Windows Forms.</p>
+                <p>Apply event-driven programming concepts through hands-on practice.</p>
+                <p>Develop and complete a functional XOX (Tic Tac Toe) desktop game as a final project.</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <h1>C# & .NET Framework Workshop</h1>
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Student Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="matric" placeholder="Matric Number" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <div class="form-group">
+                    <select id="hostel" required>
+                        <option value="">Select Hostel</option>
+                        <option value="IRCOC">IRCOC</option>
+                        <option value="BABAKER">BABAKER</option>
+                        <option value="PF">PF</option>
+                    </select>
+                </div>
+
+                <button type="submit">Submit Registration</button>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("entry.436608744", document.getElementById("name").value);
+    formData.append("entry.1426487760", document.getElementById("matric").value);
+    formData.append("entry.1240235530", document.getElementById("phone").value);
+    formData.append("entry.2011714530", document.getElementById("hostel").value);
+
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSdGpp_0Sd1cFKg_9VRKEFysZlZLNwpjXYwcYOlNRDWolnxiWw/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    }).then(() => {
+        alert("Registration Successful! 🎉\nPlease join the official WhatsApp group.");
+        window.location.href = "https://chat.whatsapp.com/B5282RCPEjP5USabt337sO?mode=gi_t";
+    });
+});
+</script>
+
+</body>
+</html>
